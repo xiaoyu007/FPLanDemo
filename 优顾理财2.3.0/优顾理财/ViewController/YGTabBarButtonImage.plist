@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<string>优顾理财小图标</string>
+		<string>优顾理财_down</string>
+	</array>
+	<array>
+		<string>资讯小图标</string>
+		<string>资讯小图标_down</string>
+	</array>
+	<array>
+		<string>财知道小图标</string>
+		<string>财知道小图标_down</string>
+	</array>
+	<array>
+		<string>我的小图标</string>
+		<string>我的小图标_down</string>
+	</array>
+</array>
+</plist>

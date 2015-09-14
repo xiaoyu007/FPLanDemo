@@ -1,0 +1,243 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+//在release版中必须屏蔽掉NSLog (通过Edit scheme -> Run SimuStock.app - Info -> Debug换为Release)
+#ifndef __OPTIMIZE__
+#define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#define NSLog(...) {}
+#endif
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+#if 1
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "Globle.h"
+    #import "AppDelegate.h"
+    #import "UIViewExt.h"
+    #import "FPYouguUtil.h"
+    #import "HeaderUtil.h"
+
+    #import "BasicIPhoneParameters.h"
+    #import "FileHelpers.h"
+
+    #import "MobClick.h"
+    #import "Header.h"
+    #import "clickLabel.h"
+    #import "Reachability.h"
+    #import "Login_ViewController.h"
+
+    #import "PV_view_sql.h"
+    #import "event_view_log.h"
+    #import "SimuControl.h"
+    #import "WebServiceManager.h"
+    #import "DicToArray.h"
+    #import "MBProgressHUD+MJ.h"
+
+    #import "UIButton+Block.h"
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+///判断系统版本是否为7以上
+#define IS_IOS7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f)
+/** 系统版本 */
+#define isIos7Version  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f ? 1 : 0)
+/** 状态栏高度 */
+#define statusBarHeight ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f?  20.0f: 0.0f)
+/** 底部栏偏移量 */
+#define BOTTOM_TOOL_BAR_OFFSET_Y ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f?  0: 20.0f)
+/** 导航栏偏移量 */
+#define NAVIGATION_BAR_OFFSET_Y ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f?  0: 50.0f)
+/** 界面宽度 */
+#define windowWidth [[UIApplication sharedApplication].delegate window].frame.size.width
+/** 界面高度 */
+#define windowHeight [[UIApplication sharedApplication].delegate window].frame.size.height
+/** tabbar高度 */
+#define tabbarHeight 50.0f
+/** 导航器高度 */
+#define navigationHeght ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f?  50.0f: 50.0f)
+//提示语动画
+    #define APP_AppDelegate                            ((AppDelegate*)[[UIApplication sharedApplication] delegate])
+    #define YouGu_animation_Did_Start(text)            [APP_AppDelegate YouGu_animation_Did_Start:text];
+/** 网络不给力 */
+#define networkFailed   @"您当前网络不给力哦"
+///一般btn按下态
+#define  btnAccordingToTheNormal [Globle colorFromHexRGB:@"000000" withAlpha:0.1f]
+#define buttonHighLightColor [Globle colorFromHexRGB:@"000000" withAlpha:0.2f]
+#define bankStepColor [UIColor colorWithRed:0.96f green:0.55f blue:0.30f alpha:1.00f]
+//文件创建
+    #define YouGu_NSFileManager               [NSFileManager defaultManager]
+    #define YouGu_fileExistsAtPath(Path)      [YouGu_NSFileManager fileExistsAtPath:Path]
+    #define YouGu_NSFileManager_Path(Path)    YouGu_fileExistsAtPath(Path)?NO:[YouGu_NSFileManager createDirectoryAtPath:pathInCacheDirectory(Path) withIntermediateDirectories:YES attributes:nil error:nil];
+//删除文件
+    #define YouGu_NSFileManger_removeItemAtPath(Path)   [YouGu_NSFileManager removeItemAtPath:pathInCacheDirectory(Path) error:nil];
+
+//网络判断
+    #define YouGu_Not_NetWork                [CheckNetWork() isEqualToString:@"无网络"]
+    #define YouGu_WAN_CheckNetWork           [CheckNetWork() isEqualToString:@"3G或GPRS"]
+    #define YouGu_WiFi_CheckNetWork          [CheckNetWork() isEqualToString:@"wifi"]
+
+//非法登录 退出(lq)
+#define Illegal_Logon_SimuStock @"illegal_Logon"
+
+#if 0
+#define YouGu_Log(string)
+#define YouGu_Loger(info,string)
+else
+#define YouGu_Log(string)                             ;
+#define YouGu_Loger(info,string)                      ;
+#endif
+
+
+    #define YouGu_StringWithFormat(NAME)                          [NSString stringWithFormat:@"%@",NAME]
+    #define YouGu_StringWithFormat_double(State,NAME)             [NSString stringWithFormat:@"%@%@",State,NAME]
+    #define YouGu_StringWithFormat_Third(State,NAME,Suffix)       [NSString stringWithFormat:@"%@%@%@",State,NAME,Suffix]
+
+    #define YouGu_default                      [NSUserDefaults  standardUserDefaults]
+    #define YouGu_defaults(KEY)                [YouGu_default  objectForKey:KEY]
+    #define YouGu_defaults_string(KEY)                [NSString stringWithFormat:@"%@",[YouGu_default  objectForKey:KEY]];
+    #define YouGu_defaults_array(KEY)          [YouGu_default  objectForKey:KEY]
+    #define YouGu_defaults_double(Value,KEY)   [[NSUserDefaults standardUserDefaults]setObject:Value forKey:KEY];[[NSUserDefaults standardUserDefaults]synchronize];
+
+    #define YouGu_Night_Day_onswitch           [YouGu_defaults(@"on_switch") intValue]
+    #define YouGu_Font_text_Model              YouGu_defaults(@"font_text_webview")
+    #define YouGu_Wifi_Image                 ([FPYouguUtil isNetworkWIFI]?1:[YouGu_defaults(@"WiFi_DownPic")intValue])
+
+    #define  YouGu_User_sessionid              ([[FPYouguUtil getSesionID] longLongValue]>0?[FPYouguUtil getSesionID]:@"-1")
+    #define  YouGu_User_USerid                 ([[FPYouguUtil getUserID] intValue]>0?[FPYouguUtil getUserID]:@"-1")
+
+
+
+//建立  消息中心
+    #define YouGu_NSNotificationCenter_Creat(Method,Path)   [[NSNotificationCenter defaultCenter] addObserver:self selector:Method name:Path object: nil];
+//发送 消息中心
+    #define YouGu_NSNotificationCenter_Sent(Path)    [[NSNotificationCenter defaultCenter] postNotificationName:Path object:nil];
+
+//判断是否是空值，如果是就，赋值
+    #define YouGu_ishave_blank(text)           ((!text||[YouGu_StringWithFormat(text) isEqualToString:@"<null>"])?@"":YouGu_StringWithFormat(text))
+
+    #define  YouGu_User_HTTPHeaders      [NSDictionary dictionaryWithObjectsAndKeys:ak_version, @"ak",YouGu_User_sessionid,@"sessionid",YouGu_User_USerid,@"userid", nil]
+    //版本ak，更新时用
+    #define youguu_Version  [[NSBundle mainBundle]objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
+
+    #define ak_version [FPYouguUtil getAK]
+
+    #define YouGu_bind_photo                @"Bind_Photo"
+    #define YouGu_bind_sina                 @"Bind_Sina"
+    #define YouGu_bind_QQ                   @"Bind_QQ"
+    #define YouGu_bind_WeiXin               @"Bind_WeiXin"
+    #define YouGu_bind_photo_sina_QQ_WeiXin @"Bind_Photo_sina_QQ_WeiXin"
+//行情数据
+    #define YouGu_stock_market_key @"YouGu_stock_market_key"
+
+//网络监听主页
+#define TEST_NET_STATUS_HOST @"www.youguu.com"
+//首次启动的提示语，
+    #define YouGu_Cai_animation   @"YouGu_Cai_animation"
+//首次进入理财超市提示
+    #define firstShowFinacingShop @"firstShowFinacingShop"
+//白天背景色值
+    #define YouGu_Day_Color     @"242424"
+//夜间背景色值
+    #define YouGu_Night_Color   @"F0F0F0"
+//通用整体背景色
+    #define customBGColor @"ffffff"
+    static BOOL YGLockButton = NO;
+//常用控件填充色
+    #define customFilledColor @"f07533"
+///灰色分割线
+#define customGrayCuttingLine @"f2f2f2"
+//涨红色值
+#define DataUpColor    @"e84545"
+//跌绿色值
+#define DataDownColor  @"50b241"
+//0值色值
+#define DataZeroColor  @"5b5f62"
+///输入栏边界色值
+#define textfieldBordColor @"c7c7c7"
+///输入栏内容色值
+#define textfieldContentColor @"8c8c8c"
+///输入栏名称色值
+#define textNameColor @"595959"
+///浅分割线
+#define lightCuttingLine @"e8e8e8"
+///深蓝色
+#define COLOR_DARK_BLUE @"#146DAE"
+
+#if 1
+    //正式环境
+    #define  IP_HTTP          @"http://img.youguu.com"
+    #define  IP_HTTP_LOG        @"http://log.youguu.com"
+    #define  IP_HTTP_DATA      @"http://news.youguu.com"
+    #define  IP_HTTP_USER      @"http://user.youguu.com"
+    #define  IP_HTTP_APP_DOWN  @"http://user.youguu.com/jhss/common/"
+    #define IP_HTTP_SHOPPING   @"http://shopping.youguu.com/"
+    #define IP_HTTP_SHOPPING_SHOPPING   @"http://shopping.youguu.com/"
+    //行情数据ip
+    #define IP_HTTP_STOCK_Market @"http://quote.youguu.com"
+    //获取服务器时间
+    #define IP_HTTP_TIME       @"http://mncg.youguu.com"
+    //百度云推送ip
+    #define IP_HTTP_daidu_PUSH @"http://bind.youguu.com"
+    //首页，行情界面
+    #define IP_HTTP_Stock_market @"http://m.youguu.com/mobile/wapsite/finance_quote/html/market.html"
+    //工具箱 数据请求ip
+    #define IP_HTTP_Tools     @"http://asteroid.youguu.com/asteroid/tools"
+
+
+    //动态loading图片请求接口
+    #define loadingImgAPI  @"http://asteroid.youguu.com/asteroid/ad/adPage?type=2405"
+    #define loadingImgAPI1 @"http://asteroid.youguu.com/"
+    #define loadingImgAPI2 @"asteroid/ad/adPage?type=2405"
+    #define riskEvaluating @"http://m.youguu.com/mobile/fund/evaluation/"
+    //基金详情页面
+    #define FundDetailIP   @"http://m.youguu.com/"
+#endif
+ //http://asteroid.youguu.com/purchase
+
+#if 0//  测试环境
+    #define  IP_HTTP            @"http://119.253.36.116"
+    #define  IP_HTTP_LOG        @"http://119.253.36.116"
+    #define  IP_HTTP_DATA      @"http://119.253.36.116"
+    //#define  IP_HTTP_DATA @"http//192.168.1.220:8888"
+    #define  IP_HTTP_USER      @"http://119.253.36.116"
+    #define  IP_HTTP_APP_DOWN  @"http://119.253.36.116/jhss/common/"
+    #define IP_HTTP_SHOPPING   @"http://192.168.1.12:4042/"
+    #define IP_HTTP_SHOPPING_SHOPPING   @"http://192.168.1.12:4044/"
+
+
+    //行情数据ip
+    #define IP_HTTP_STOCK_Market @"http://119.253.36.116"
+    //罗宾主机
+    //#define IP_HTTP_STOCK_Market @"http://192.168.3.127:8081"
+    //获取服务器时间
+    #define IP_HTTP_TIME       @"http://119.253.36.116"
+    //百度云推送ip
+    #define IP_HTTP_daidu_PUSH @"http://192.168.1.12:8081"
+    //首页，行情界面
+    #define IP_HTTP_Stock_market @"http://119.253.36.116/wapsite/finance_quote/html/market.html"
+
+    //工具箱 数据请求ip  
+    #define IP_HTTP_Tools     @"http://119.253.36.116/asteroid/tools"
+   //动态loading图片请求接口
+   #define  loadingImgAPI  @"http://192.168.1.25:30588/asteroid/ad/adPage?type=2405"
+   #define  loadingImgAPI1 @"http://192.168.1.25:30588"
+   #define  loadingImgAPI2 @"/asteroid/ad/adPage?type=2405"
+   #define  riskEvaluating @"http://test.youguu.com/mobile/fund/evaluation/"
+   //基金详情页面
+   #define FundDetailIP   @"http://test.youguu.com/"
+    //网络监听主页
+    #define TEST_NET_STATUS_HOST @"www.youguu.com"
+#endif
+
+#endif
+
+#endif
+

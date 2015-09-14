@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="StockMarketTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2t8-Ed-Y9i">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+                        <subviews>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5f-0q-2Pj" userLabel="View1" customClass="StockItemView">
+                                <rect key="frame" x="10" y="0.0" width="100" height="79"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IpX-kX-idP" userLabel="View2" customClass="StockItemView">
+                                <rect key="frame" x="110" y="0.0" width="100" height="79"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXj-Hp-hC3" userLabel="View3" customClass="StockItemView">
+                                <rect key="frame" x="210" y="0.0" width="100" height="79"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMw-6w-fT9">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="StockBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="EUJ-Db-MzG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="sXj-Hp-hC3" secondAttribute="trailing" constant="10" id="3eZ-ub-rCd"/>
+                            <constraint firstItem="IpX-kX-idP" firstAttribute="top" secondItem="SMw-6w-fT9" secondAttribute="top" id="9xj-dM-OlJ"/>
+                            <constraint firstItem="SMw-6w-fT9" firstAttribute="top" secondItem="2t8-Ed-Y9i" secondAttribute="top" id="Bw4-kl-aD0"/>
+                            <constraint firstItem="IpX-kX-idP" firstAttribute="top" secondItem="K5f-0q-2Pj" secondAttribute="top" id="CeC-TV-qE1"/>
+                            <constraint firstItem="SMw-6w-fT9" firstAttribute="leading" secondItem="2t8-Ed-Y9i" secondAttribute="leading" id="Le8-Z5-b2q"/>
+                            <constraint firstItem="IpX-kX-idP" firstAttribute="width" secondItem="K5f-0q-2Pj" secondAttribute="width" id="Qir-oa-MFa"/>
+                            <constraint firstItem="sXj-Hp-hC3" firstAttribute="leading" secondItem="SMw-6w-fT9" secondAttribute="trailing" id="QrH-bW-jz0"/>
+                            <constraint firstItem="K5f-0q-2Pj" firstAttribute="leading" secondItem="2t8-Ed-Y9i" secondAttribute="leading" constant="10" id="TVJ-M2-b1e"/>
+                            <constraint firstItem="IpX-kX-idP" firstAttribute="centerX" secondItem="SMw-6w-fT9" secondAttribute="centerX" id="WqJ-WO-34S"/>
+                            <constraint firstItem="K5f-0q-2Pj" firstAttribute="top" secondItem="2t8-Ed-Y9i" secondAttribute="top" id="Xhk-TH-Zxh"/>
+                            <constraint firstAttribute="bottom" secondItem="SMw-6w-fT9" secondAttribute="bottom" id="aPE-ZL-sNe"/>
+                            <constraint firstAttribute="bottom" secondItem="K5f-0q-2Pj" secondAttribute="bottom" id="aV7-QH-pJW"/>
+                            <constraint firstAttribute="bottom" secondItem="SMw-6w-fT9" secondAttribute="bottom" id="bsY-Z1-ff5"/>
+                            <constraint firstItem="SMw-6w-fT9" firstAttribute="top" secondItem="2t8-Ed-Y9i" secondAttribute="top" id="cKp-ve-YXu"/>
+                            <constraint firstItem="IpX-kX-idP" firstAttribute="height" secondItem="sXj-Hp-hC3" secondAttribute="height" id="ctZ-la-JCy"/>
+                            <constraint firstItem="IpX-kX-idP" firstAttribute="centerX" secondItem="2t8-Ed-Y9i" secondAttribute="centerX" id="gaz-cP-CZi"/>
+                            <constraint firstAttribute="trailing" secondItem="SMw-6w-fT9" secondAttribute="trailing" id="mED-wu-zP3"/>
+                            <constraint firstItem="SMw-6w-fT9" firstAttribute="leading" secondItem="K5f-0q-2Pj" secondAttribute="trailing" id="o6D-Bo-e5Y"/>
+                            <constraint firstItem="IpX-kX-idP" firstAttribute="bottom" secondItem="SMw-6w-fT9" secondAttribute="bottom" id="pC8-1a-0Ey"/>
+                            <constraint firstItem="IpX-kX-idP" firstAttribute="height" secondItem="K5f-0q-2Pj" secondAttribute="height" id="rmN-cR-Unv"/>
+                            <constraint firstItem="IpX-kX-idP" firstAttribute="leading" secondItem="K5f-0q-2Pj" secondAttribute="trailing" id="sl1-HN-WTB"/>
+                            <constraint firstItem="IpX-kX-idP" firstAttribute="width" secondItem="sXj-Hp-hC3" secondAttribute="width" id="vlT-4n-1Ce"/>
+                            <constraint firstAttribute="bottom" secondItem="sXj-Hp-hC3" secondAttribute="bottom" id="yuF-SX-h4R"/>
+                            <constraint firstItem="sXj-Hp-hC3" firstAttribute="top" secondItem="2t8-Ed-Y9i" secondAttribute="top" id="zAi-OV-gVk"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9xj-dM-OlJ"/>
+                                <exclude reference="WqJ-WO-34S"/>
+                                <exclude reference="pC8-1a-0Ey"/>
+                                <exclude reference="Bw4-kl-aD0"/>
+                                <exclude reference="aPE-ZL-sNe"/>
+                                <exclude reference="o6D-Bo-e5Y"/>
+                                <exclude reference="QrH-bW-jz0"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tar-vE-6oG" customClass="Lineview">
+                        <rect key="frame" x="9" y="78" width="293" height="1"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="Qwg-NR-dVs"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="tar-vE-6oG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="1" id="5sh-RX-3Is"/>
+                    <constraint firstAttribute="bottom" secondItem="2t8-Ed-Y9i" secondAttribute="bottom" id="Eyg-Pg-mbG"/>
+                    <constraint firstItem="2t8-Ed-Y9i" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Rcl-xH-vSd"/>
+                    <constraint firstItem="2t8-Ed-Y9i" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="SsV-pE-9Ci"/>
+                    <constraint firstAttribute="bottom" secondItem="tar-vE-6oG" secondAttribute="bottom" id="UVu-sf-BXB"/>
+                    <constraint firstAttribute="trailing" secondItem="2t8-Ed-Y9i" secondAttribute="trailing" id="czI-F1-kzO"/>
+                    <constraint firstAttribute="bottom" secondItem="2t8-Ed-Y9i" secondAttribute="bottom" id="gqL-cS-p3d"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="tar-vE-6oG" secondAttribute="bottom" id="hBy-t0-FPk"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="tar-vE-6oG" secondAttribute="trailing" constant="10" id="iQI-yp-SpU"/>
+                    <constraint firstItem="2t8-Ed-Y9i" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="rK4-7Y-1eB"/>
+                    <constraint firstItem="2t8-Ed-Y9i" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ugH-rQ-82N"/>
+                    <constraint firstAttribute="trailing" secondItem="2t8-Ed-Y9i" secondAttribute="trailing" id="xye-Z4-K0a"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="Eyg-Pg-mbG"/>
+                        <exclude reference="Rcl-xH-vSd"/>
+                        <exclude reference="rK4-7Y-1eB"/>
+                        <exclude reference="xye-Z4-K0a"/>
+                        <exclude reference="hBy-t0-FPk"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="lineView" destination="tar-vE-6oG" id="DzS-fa-1Ai"/>
+                <outlet property="marketBtn" destination="SMw-6w-fT9" id="PW2-DV-rAf"/>
+                <outlet property="stockView" destination="2t8-Ed-Y9i" id="4u4-8H-3BF"/>
+                <outlet property="stockView1" destination="K5f-0q-2Pj" id="gdb-Li-r1a"/>
+                <outlet property="stockView2" destination="IpX-kX-idP" id="chi-56-Fx1"/>
+                <outlet property="stockView3" destination="sXj-Hp-hC3" id="Jyy-UI-2k1"/>
+            </connections>
+            <point key="canvasLocation" x="413" y="131"/>
+        </tableViewCell>
+    </objects>
+</document>

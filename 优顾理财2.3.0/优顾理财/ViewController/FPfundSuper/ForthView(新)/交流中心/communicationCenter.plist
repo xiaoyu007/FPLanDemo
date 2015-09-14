@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>财知道左侧图片</key>
+	<array>
+		<string>农业银行小图标.png</string>
+		<string>建设银行小图标.png</string>
+		<string>民生银行小图标.png</string>
+	</array>
+	<key>财知道右侧图片</key>
+	<array>
+		<string>更多_夜间.png</string>
+		<string>更多_夜间.png</string>
+		<string>更多_夜间.png</string>
+	</array>
+	<key>文章评论左侧图片</key>
+	<array>
+		<string>建设银行小图标.png</string>
+		<string>建设银行小图标.png</string>
+	</array>
+	<key>文章评论右侧图片</key>
+	<array>
+		<string>更多_夜间.png</string>
+		<string>更多_夜间.png</string>
+	</array>
+</dict>
+</plist>

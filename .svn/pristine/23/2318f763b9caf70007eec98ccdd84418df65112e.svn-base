@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<array>
+			<string>我的资产小图标</string>
+			<string>cf9de7</string>
+			<string>我的资产小图标</string>
+			<string>a72a80</string>
+			<string>我的资产</string>
+		</array>
+		<array>
+			<string>账户中心小图标</string>
+			<string>f37e6b</string>
+			<string>账户中心小图标</string>
+			<string>86312a</string>
+			<string>账户中心</string>
+		</array>
+		<array>
+			<string>我的自选小图标</string>
+			<string>ff94c1</string>
+			<string>我的自选小图标</string>
+			<string>34708f</string>
+			<string>我的自选</string>
+		</array>
+		<array>
+			<string>工具箱小图标</string>
+			<string>5fc1f3</string>
+			<string>工具箱小图标</string>
+			<string>a72a80</string>
+			<string>工具箱</string>
+		</array>
+		<array>
+			<string>我的收藏小图标</string>
+			<string>f6786f</string>
+			<string>我的收藏小图标</string>
+			<string>79521f</string>
+			<string>我的收藏</string>
+		</array>
+		<array>
+			<string>设置小图标</string>
+			<string>f1b567</string>
+			<string>设置小图标</string>
+			<string>79521f</string>
+			<string>设置</string>
+		</array>
+	</array>
+</array>
+</plist>

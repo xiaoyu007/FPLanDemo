@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>活期存款</string>
+	<string>3个月定期</string>
+	<string>6个月定期</string>
+	<string>1年定期</string>
+	<string>2年定期</string>
+	<string>3年定期</string>
+	<string>5年定期</string>
+</array>
+</plist>

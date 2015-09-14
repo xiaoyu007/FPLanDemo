@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>最新基准利率</string>
+	<string>新基利率7折</string>
+	<string>新基利率8折</string>
+	<string>新基利率9折</string>
+	<string>新基利率1.1倍</string>
+	<string>新基利率1.2倍</string>
+	<string>新基利率1.3倍</string>
+</array>
+</plist>

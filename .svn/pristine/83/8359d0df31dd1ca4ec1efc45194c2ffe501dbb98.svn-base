@@ -1,0 +1,80 @@
+<!DOCTYPEhtmlPUBLIC"-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-Type"content="text/html; charset=utf-8" />
+    <style>
+        body{font-size:14px;margin:0 auto;font-family:"AppleGothic";background-color:${backgroundcolor};}
+        div,a,h1,img,p{margin :0 auto;padding:0px;list-style-type:none;}
+        h1{
+            font-size:21px;
+            text-align:left;
+            padding:12px 16px 12px;
+            color:${h1_text_color};
+        }
+        .summary{
+            font-size:12px;
+            margin-bottom:20px;
+        }
+        .content_news{
+            width:auto;
+            margin-top:10px;
+            color:${h1_text_color};
+        }
+        img.bb{
+            float:right;
+            margin-top:5px;
+            margin-right:16px;
+            margin-left:16px;
+            max-width:288px;
+            height:auto;
+            opacity:${img_opacity};
+            filter:alpha(opacity=${img_opacity});
+        }
+        img.log_img{
+            
+            margin-left:16;
+            max-width:90px;
+            max-height:40px;
+            margin-top:10px;
+        }
+        p{
+            font-size:${body_text_fontsize}px;
+            vertical-align:bottom;
+            line-height:150%;
+            padding:0 16px;
+            text-indent:32px;
+            text-align:justify;
+            text-justify:kashida;
+            list-style-type:none;
+            word-wrap : break-word;
+            word-break:keep-all;
+            margin-top:12px;
+            margin-bottom:0px;
+        }
+    
+      a{
+         text-decoration:none;
+       }
+    </style>
+</head>
+<body>
+    <script>var forward=function(num1,num2){document.location='objc://'+num1+':/'+num2;};</Script>
+    <div class="">
+        ${web_view_logo}<!--文章来源的logo，没有表示优顾自己的-->
+        <h1 id="title_name">${title}<!--主标题--></h1>
+        
+          <div class="summary">
+                <span style="margin-left:16px;float:left;color:#555555;">
+                    来源:${Source}<!--来源：优顾-->
+                </span>
+                
+                <span style="margin-right:16px;float:right;color:#555555;">
+                         ${time}<!--发布时间-->
+                </span>
+           </div>
+      
+        <div class="content_news" id="content_text_sizefont">
+                ${content}<!--主体文本-->
+       </div>
+    </div>
+</body>
+</html>

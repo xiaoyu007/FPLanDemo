@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>零首付</string>
+	<string>一成</string>
+	<string>两成</string>
+	<string>三成</string>
+	<string>四成</string>
+	<string>五成</string>
+	<string>六成</string>
+	<string>七成</string>
+	<string>八成</string>
+	<string>九成</string>
+</array>
+</plist>

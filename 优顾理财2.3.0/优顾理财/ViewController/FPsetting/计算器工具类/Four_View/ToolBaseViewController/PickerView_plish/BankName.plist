@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>基准利率</string>
+	<string>工商银行</string>
+	<string>建设银行</string>
+	<string>中国银行</string>
+	<string>农业银行</string>
+	<string>交通银行</string>
+	<string>邮政储蓄</string>
+	<string>招商银行</string>
+	<string>中信银行</string>
+	<string>光大银行</string>
+	<string>华夏银行</string>
+	<string>广发银行</string>
+	<string>兴业银行</string>
+	<string>渤海银行</string>
+	<string>浙商银行</string>
+	<string>民生银行</string>
+	<string>宁波银行</string>
+	<string>深发银行</string>
+	<string>浦发银行</string>
+	<string>北京银行</string>
+	<string>上海银行</string>
+	<string>天津银行</string>
+	<string>京农商行</string>
+	<string>沪农商行</string>
+	<string>汇丰银行</string>
+	<string>东亚银行</string>
+	<string>渣打银行</string>
+</array>
+</plist>

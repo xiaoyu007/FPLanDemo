@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FundGuidingViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" alpha="0.69999999999999996" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="首页_控制面板_首次登陆引导.png" translatesAutoresizingMaskIntoConstraints="NO" id="EQT-Wp-QYW">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="上下滑动引导.png" translatesAutoresizingMaskIntoConstraints="NO" id="i2n-RR-PLc">
+                    <rect key="frame" x="148" y="266" width="130" height="153"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="153" id="gZL-DA-X2s"/>
+                        <constraint firstAttribute="width" constant="130" id="uzq-yu-HSg"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="左右滑动引导.png" translatesAutoresizingMaskIntoConstraints="NO" id="41R-Z2-bUl">
+                    <rect key="frame" x="79" y="456" width="163" height="89"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="163" id="T9G-yX-MxU"/>
+                        <constraint firstAttribute="height" constant="89" id="wfE-e3-zdE"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="41R-Z2-bUl" secondAttribute="centerX" constant="-0.5" id="7fU-VW-biW"/>
+                <constraint firstItem="41R-Z2-bUl" firstAttribute="top" secondItem="i2n-RR-PLc" secondAttribute="bottom" constant="37" id="UiJ-Xl-7Zu"/>
+                <constraint firstAttribute="centerX" secondItem="i2n-RR-PLc" secondAttribute="centerX" constant="-53" id="XZf-MH-LfC"/>
+                <constraint firstItem="i2n-RR-PLc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="266" id="mC8-V6-4t1"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="上下滑动引导.png" width="260" height="306"/>
+        <image name="左右滑动引导.png" width="327" height="178"/>
+        <image name="首页_控制面板_首次登陆引导.png" width="640" height="1136"/>
+    </resources>
+</document>
